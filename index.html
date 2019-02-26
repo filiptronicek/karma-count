@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Reddit karma</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+<div id="leaderboard">
+
+</div>
+    <script>
+        var leaderboard = document.getElementById("leaderboard");
+        var commentKarma;
+        var postKarma;
+        var userName;
+        var userIcon;
+        
+        users = ["Sloth_on_meth", "filiptronicek", "cigarkovic", "gallowboob", "TooShiftyForYou"]
+
+        function updateStats() {
+        users.forEach(mainfunc)
+        }
+updateStats();     
+     
+        function mainfunc(user) {
+ $.getJSON( "https://www.reddit.com/user/"+user+"/about.json", function(data) {
+    commentKarma = data.data.comment_karma;
+    postKarma = data.data.link_karma;
+    totalKarma = commentKarma + postKarma;
+    userName = data.data.name;
+    userIcon = data.data.icon_img;
+    leaderboard.innerHTML += "<div id='usr"+userName+"'><br><br><img src='"+userIcon+ "'><br>"+userName +"<br>"+totalKarma.toLocaleString()+" karma";
+
+
+
+
+}).done(function() {    
+   return;
+})
+.fail(function() {
+  console.log( "error" );
+})
+.always(function() {
+   console.log( "complete" );
+
+})
+//setTimeout(function(){ updateStats() }, 5000);
+        }
+        </script>
+</body>
+</html>
