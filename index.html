@@ -13,48 +13,6 @@
 <div id="leaderboard">
 
 </div>
-    <script>
-        var leaderboard = document.getElementById("leaderboard");
-        var commentKarma;
-        var postKarma;
-        var userName;
-        var userIcon;
-        var userUrl;
-
-        users = ["Sloth_on_meth", "filiptronicek", "cigarkovic", "gallowboob", "TooShiftyForYou"]
-
-        function updateStats() {
-            leaderboard.innerHTML = "";
-
-        users.forEach(mainfunc)
-        }
-updateStats();     
-     
-        function mainfunc(user) {
- $.getJSON( "https://www.reddit.com/user/"+user+"/about.json", function(data) {
-    commentKarma = data.data.comment_karma;
-    postKarma = data.data.link_karma;
-    totalKarma = commentKarma + postKarma;
-    userName = data.data.name;
-    userIcon = data.data.icon_img;
-    userUrl = "https://reddit.com/u/"+ userName;
-    leaderboard.innerHTML += "<div class='usr' id='"+userName+"'><br><br><img src='"+userIcon+ "'><br><a href='"+userUrl+"'>"+userName +"</a><br>"+totalKarma.toLocaleString()+" karma";
-
-
-
-//setTimeout(function(){ updateStats(); }, 10000);
-
-}).done(function() {    
-   return;
-})
-.fail(function() {
-  console.log( "error" );
-})
-.always(function() {
-   console.log( "complete" );
-})
-
-        }
-        </script>
+    <script src="main.js"> </script>
 </body>
 </html>

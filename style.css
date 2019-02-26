@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+* {
+	margin: 0;
+	padding: 0;
+}
 body {
 	background: black;
 	color: white;
@@ -14,7 +18,7 @@ body {
 	padding-bottom: 250px;
 }
 #leaderboard {
-	width: 99%;
+	width: 95%;
 	height: 35px;
 	padding: 0.5em;
 }
@@ -24,7 +28,7 @@ body {
 img {
 	border-radius: 10px;
 }
-a{
+a {
 	text-decoration: none;
 	color: #ff4500;
 }
