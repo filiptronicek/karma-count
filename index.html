@@ -34,7 +34,7 @@ updateStats();
     totalKarma = commentKarma + postKarma;
     userName = data.data.name;
     userIcon = data.data.icon_img;
-    leaderboard.innerHTML += "<div id='usr"+userName+"'><br><br><img src='"+userIcon+ "'><br>"+userName +"<br>"+totalKarma.toLocaleString()+" karma";
+    leaderboard.innerHTML += "<div class='usr' id='"+userName+"'><br><br><img src='"+userIcon+ "'><br>"+userName +"<br>"+totalKarma.toLocaleString()+" karma";
 
 
 
