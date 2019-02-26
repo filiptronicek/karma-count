@@ -19,10 +19,13 @@
         var postKarma;
         var userName;
         var userIcon;
-        
+        var userUrl;
+
         users = ["Sloth_on_meth", "filiptronicek", "cigarkovic", "gallowboob", "TooShiftyForYou"]
 
         function updateStats() {
+            leaderboard.innerHTML = "";
+
         users.forEach(mainfunc)
         }
 updateStats();     
@@ -34,10 +37,12 @@ updateStats();
     totalKarma = commentKarma + postKarma;
     userName = data.data.name;
     userIcon = data.data.icon_img;
-    leaderboard.innerHTML += "<div class='usr' id='"+userName+"'><br><br><img src='"+userIcon+ "'><br>"+userName +"<br>"+totalKarma.toLocaleString()+" karma";
+    userUrl = "https://reddit.com/u/"+ userName;
+    leaderboard.innerHTML += "<div class='usr' id='"+userName+"'><br><br><img src='"+userIcon+ "'><br><a href='"+userUrl+"'>"+userName +"</a><br>"+totalKarma.toLocaleString()+" karma";
 
 
 
+//setTimeout(function(){ updateStats(); }, 10000);
 
 }).done(function() {    
    return;
@@ -47,9 +52,8 @@ updateStats();
 })
 .always(function() {
    console.log( "complete" );
-
 })
-//setTimeout(function(){ updateStats() }, 5000);
+
         }
         </script>
 </body>

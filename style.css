@@ -21,3 +21,10 @@ body {
 #leaderboard > div {
 	float: left;
 }
+img {
+	border-radius: 10px;
+}
+a{
+	text-decoration: none;
+	color: #ff4500;
+}
