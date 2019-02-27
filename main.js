@@ -5,13 +5,19 @@ var userName;
 var userIcon;
 var userUrl;
 var usersloaded = [];
-var userskarma = [];
-var usersIcon = [];
-users = [ 'Sloth_on_meth', 'filiptronicek', 'cigarkovic', 'gallowboob', 'TooShiftyForYou', 'actually_crazy_irl', '' ];
+
+users = [
+	'sloth_on_meth',
+	'filiptronicek',
+	'cigarkovic',
+	'gallowboob',
+	'tooshiftyforyou',
+	'actually_crazy_irl',
+	'haxpress'
+];
 
 function updateStats() {
 	leaderboard.innerHTML = '';
-
 	users.forEach(mainfunc);
 }
 updateStats();
@@ -24,44 +30,42 @@ function mainfunc(user) {
 		userName = user;
 		userIcon = data.data.icon_img;
 		userUrl = 'https://reddit.com/u/' + userName;
-		leaderboard.innerHTML +=
-			"<div class='usr' id='" +
-			userName +
-			"'><br><br><img src='" +
-			userIcon +
-			"'><br><a href='" +
-			userUrl +
-			"'> u/" +
-			userName +
-			'</a><br>' +
-			totalKarma.toLocaleString() +
-			' karma';
 
-		usersloaded.push(user);
-		userskarma.push(totalKarma);
-		usersIcon.push(userIcon);
-
-		console.log(user);
-		console.log(usersIcon);
-		userskarma.sort(function(a, b) {
-			return a - b;
+		usersloaded.push({
+			user,
+			userName,
+			userIcon,
+			userUrl,
+			totalKarma
 		});
-		console.log(userskarma);
 
-		//setTimeout(function(){ updateStats(); }, 10000);
+		loadData(usersloaded);
 	})
 		.done(function() {
 			return;
 		})
 		.fail(function() {
-			console.log('error');
+			console.log('error loading ' + user);
 		})
 		.always(function() {
-			console.log('complete');
+			//console.log('completed loading ' + user);
 		});
 }
 
-/*setTimeout(function() {
-	location.href = '';
-}, 10000);
-*/
+function loadData(usersloaded) {
+	leaderboard.innerHTML = '';
+	usersloaded.sort((a, b) => b.totalKarma - a.totalKarma).forEach((u) => {
+		leaderboard.innerHTML +=
+			"<div class='usr' id='" +
+			u.userName +
+			"'><br><br><img src='" +
+			u.userIcon +
+			"'><br><a href='" +
+			u.userUrl +
+			"'> u/" +
+			u.userName +
+			'</a><br>' +
+			u.totalKarma.toLocaleString() +
+			' karma';
+	});
+}
