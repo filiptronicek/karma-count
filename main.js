@@ -1,10 +1,29 @@
 var leaderboard = document.getElementById('leaderboard');
+var settingsbtn = document.getElementById('settings');
 var commentKarma;
 var postKarma;
 var userName;
 var userIcon;
 var userUrl;
 var usersloaded = [];
+$('.switch').hide();
+
+$('#settings').click(function() {
+	console.log('Open settings');
+	$('.switch').show();
+});
+setTimeout(function() {
+	Reload();
+}, 25000);
+function Reload() {
+	console.log('Reloading in 5 seconds');
+	setTimeout(function() {
+		document.title = 'Loading';
+	}, 4500);
+	setTimeout(function() {
+		location.reload(true);
+	}, 5000);
+}
 
 users = [
 	'sloth_on_meth',
@@ -17,9 +36,15 @@ users = [
 ];
 
 function updateStats() {
-	leaderboard.innerHTML = '';
 	users.forEach(mainfunc);
 }
+/*
+function updaat{
+	document.body.innerHTML = '';
+	users.forEach(mainfunc);
+	setTimeout(updaat, 10000);
+}
+*/
 updateStats();
 
 function mainfunc(user) {
@@ -68,4 +93,5 @@ function loadData(usersloaded) {
 			u.totalKarma.toLocaleString() +
 			' karma';
 	});
+	document.title = 'Reddit karma counter';
 }
