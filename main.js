@@ -1,5 +1,7 @@
 var leaderboard = document.getElementById('profiles');
 var settingsbtn = document.getElementById('settingsbtn');
+var plusbtn = document.getElementById('new');
+
 var commentKarma;
 var postKarma;
 var userName;
@@ -8,7 +10,17 @@ var userUrl;
 var usersById;
 var usersloaded = [];
 var newUserCounterEach = 0;
+var newUsr;
 
+usersById = [
+	'sloth_on_meth',
+	'filiptronicek',
+	'cigarkovic',
+	'gallowboob',
+	'tooshiftyforyou',
+	'haxpress',
+	'blokensie'
+];
 //Settings modal
 
 $('#checkbox').change(function(ev) {
@@ -35,7 +47,7 @@ $('#checkbox').change(function(ev) {
 	setTimeout(function() {
 		console.log('Shit just got updated');
 		location.href = '';
-	}, 1000);
+	}, 100);
 });
 if (localStorage.getItem('reload') == 'true') {
 	console.log('Auto-reload enabled: ' + localStorage.getItem('reload'));
@@ -47,6 +59,8 @@ if (localStorage.getItem('reload') == 'true') {
 	}, 55000);
 	function Reload() {
 		console.log('Reloading in 5 seconds');
+		leaderboard.innerHTML += '<link rel="icon" href="down.png"></link>';
+
 		setTimeout(function() {
 			document.title = 'Loading';
 		}, 4500);
@@ -85,16 +99,6 @@ window.onclick = function(event) {
 };
 
 //Karma API
-
-usersById = [
-	'sloth_on_meth',
-	'filiptronicek',
-	'cigarkovic',
-	'gallowboob',
-	'tooshiftyforyou',
-	'actually_crazy_irl',
-	'haxpress'
-];
 
 function updateStats() {
 	usersById.forEach(mainfunc);
@@ -156,8 +160,23 @@ function loadData(usersloaded) {
 	});
 	newUserCounterEach++;
 	console.log('Users: ' + newUserCounterEach);
-	if (newUserCounterEach == usersById.length) {
+
+	/*	if (newUserCounterEach == usersById.length) {
 		console.log('Completed loading');
+		leaderboard.innerHTML +=
+			"<div class='usr' id='new' onClick='addNew()'><br><br><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'><path d='M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z'/></svg><br> <br>";
 	}
+	*/
 	document.title = 'Reddit karma';
+	leaderboard.innerHTML += '<link rel="icon" href="favicon.png"></link>';
+}
+
+function addNew() {
+	console.log('Clicked plus btn');
+	newUsr = prompt('What is it?');
+	console.log(newUsr);
+	if (newUsr != undefined || newUsr != '') {
+		usersById.push(newUsr);
+		updateStats();
+	}
 }

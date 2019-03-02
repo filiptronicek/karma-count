@@ -188,5 +188,13 @@ input:checked + .slider:before {
 	transform: rotate(180deg);
 }
 #new {
-	display: none;
+	text-align: center;
+}
+.usr > svg {
+	fill: white;
+	width: 180px;
+	position: relative;
+	left: 35%;
+	top: 50%;
+	cursor: pointer;
 }
