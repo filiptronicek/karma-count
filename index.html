@@ -14,18 +14,48 @@
     -->
 </head>
 <div class="settings" id="settings">   
-     <i class="fas fa-cog"></i>
-</div>
-    
-<!-- Rounded switch -->
+    <!-- The Modal -->
+<div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+                <div class="modal-header">
+                        <span class="close">&times;</span>
+                       
+                        <h2>Settings</h2>
+                      </div>
+                      <br />
+          <div class="modal-body">
+              
+            <p>Auto refresh: (every minute)
+            <!-- Rounded switch -->
 <label class="switch">
-    <input type="checkbox">
-    <span class="slider round"></span>
-  </label>
-<body>
-<div id="leaderboard">
+        <input type="checkbox" id="checkbox">
+        <span class="slider round"></span>
+      </label>
+      </p>
+          </div>
+      
+        </div>
+      
+      </div>
+     <i class="fas fa-cog" id="settingsbtn"></i>
 
 </div>
+
+    
+<body>
+<div id="leaderboard">
+  <div id="profiles">
+
+  </div>
+    <div id="new">
+        <i class="fas fa-plus" style="font-size: 128px;"></i>
+      </div>
+
+</div>
+
+
     <script src="main.js"> </script>
 </body>
 </html>

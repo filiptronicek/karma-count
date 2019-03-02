@@ -17,39 +17,38 @@ body {
 	padding: 4.5em;
 	padding-bottom: 250px;
 }
-#leaderboard {
+#leaderboard > div {
 	width: 95%;
 	height: 35px;
 	padding: 0.5em;
 }
-#leaderboard > div {
+#leaderboard > div > div {
 	float: left;
 }
 img {
 	border-radius: 10px;
-	
 }
 a {
 	text-decoration: none;
 	color: #ff4500;
 }
- /* The switch - the box around the slider */
- .switch {
+/* The switch - the box around the slider */
+.switch {
 	position: relative;
 	display: inline-block;
 	width: 60px;
 	height: 34px;
-  }
-  
-  /* Hide default HTML checkbox */
-  .switch input {
+}
+
+/* Hide default HTML checkbox */
+.switch input {
 	opacity: 0;
 	width: 0;
 	height: 0;
-  }
-  
-  /* The slider */
-  .slider {
+}
+
+/* The slider */
+.slider {
 	position: absolute;
 	cursor: pointer;
 	top: 0;
@@ -59,9 +58,9 @@ a {
 	background-color: #ccc;
 	-webkit-transition: .4s;
 	transition: .4s;
-  }
-  
-  .slider:before {
+}
+
+.slider:before {
 	position: absolute;
 	content: "";
 	height: 26px;
@@ -71,34 +70,123 @@ a {
 	background-color: white;
 	-webkit-transition: .4s;
 	transition: .4s;
-  }
-  
-  input:checked + .slider {
-	background-color: #2196F3;
-  }
-  
-  input:focus + .slider {
-	box-shadow: 0 0 1px #2196F3;
-  }
-  
-  input:checked + .slider:before {
+}
+
+input:checked + .slider {
+	background-color: #ff4500;
+}
+
+input:focus + .slider {
+	box-shadow: 0 0 1px #ff4500;
+}
+
+input:checked + .slider:before {
 	-webkit-transform: translateX(26px);
 	-ms-transform: translateX(26px);
 	transform: translateX(26px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
+}
+
+/* Rounded sliders */
+.slider.round {
 	border-radius: 34px;
-  }
-  
-  .slider.round:before {
+}
+
+.slider.round:before {
 	border-radius: 50%;
-  } 
-  .settings{
-	  position: absolute;
-	  right: 1%;
-	  top: 1%;
-	  font-size: 35px;
-	  cursor: pointer;
-  }
+}
+#settingsbtn {
+	position: absolute;
+	right: 1%;
+	top: 1%;
+	font-size: 35px;
+	cursor: pointer;
+}
+
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(255, 255, 255); /* Fallback color */
+	background-color: rgba(255, 255, 255, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+	position: relative;
+	background-color: #fefefe;
+	margin: auto;
+	padding: 0;
+	border: 1px solid #888;
+	width: 80%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	-webkit-animation-name: animatetop;
+	-webkit-animation-duration: 0.4s;
+	animation-name: animatetop;
+	animation-duration: 0.4s;
+	color: black;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+	from {
+		top: -300px;
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+@keyframes animatetop {
+	from {
+		top: -300px;
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+/* The Close Button */
+.close {
+	color: white;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.modal-body {
+	padding: 2px 16px;
+}
+.modal-header {
+	padding: 2px 16px;
+	background-color: #ff4500;
+	color: white;
+}
+.fas {
+	-webkit-transition: -webkit-transform .8s ease-in-out;
+	transition: transform .4s ease-in-out;
+}
+.fas:hover {
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+#new {
+	display: none;
+}

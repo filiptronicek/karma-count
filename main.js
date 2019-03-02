@@ -1,31 +1,92 @@
-var leaderboard = document.getElementById('leaderboard');
-var settingsbtn = document.getElementById('settings');
+var leaderboard = document.getElementById('profiles');
+var settingsbtn = document.getElementById('settingsbtn');
 var commentKarma;
 var postKarma;
 var userName;
 var userIcon;
 var userUrl;
+var usersById;
 var usersloaded = [];
-$('.switch').hide();
+var newUserCounterEach = 0;
 
-$('#settings').click(function() {
-	console.log('Open settings');
-	$('.switch').show();
+//Settings modal
+
+$('#checkbox').change(function(ev) {
+	if ($(this).is(':checked')) {
+		if (typeof Storage !== 'undefined') {
+			// Store
+			localStorage.setItem('reload', true);
+			console.log('Localstorage changed to ' + localStorage.getItem('reload'));
+
+			// Retrieve
+		} else {
+		}
+	} else {
+		if (typeof Storage !== 'undefined') {
+			// Store
+			localStorage.setItem('reload', false);
+			console.log('Localstorage changed to ' + localStorage.getItem('reload'));
+
+			// Retrieve
+		} else {
+		}
+	}
+
+	setTimeout(function() {
+		console.log('Shit just got updated');
+		location.href = '';
+	}, 1000);
 });
-setTimeout(function() {
-	Reload();
-}, 25000);
-function Reload() {
-	console.log('Reloading in 5 seconds');
+if (localStorage.getItem('reload') == 'true') {
+	console.log('Auto-reload enabled: ' + localStorage.getItem('reload'));
+
+	$('#checkbox').attr('checked', 'true');
+
 	setTimeout(function() {
-		document.title = 'Loading';
-	}, 4500);
-	setTimeout(function() {
-		location.reload(true);
-	}, 5000);
+		Reload();
+	}, 55000);
+	function Reload() {
+		console.log('Reloading in 5 seconds');
+		setTimeout(function() {
+			document.title = 'Loading';
+		}, 4500);
+		setTimeout(function() {
+			location.reload(true);
+		}, 5000);
+	}
+} else {
+	console.log('Auto-reload enabled: ' + localStorage.getItem('reload'));
 }
 
-users = [
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = settingsbtn;
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName('close')[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+	modal.style.display = 'block';
+};
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+	modal.style.display = 'none';
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+	if (event.target == modal) {
+		modal.style.display = 'none';
+	}
+};
+
+//Karma API
+
+usersById = [
 	'sloth_on_meth',
 	'filiptronicek',
 	'cigarkovic',
@@ -36,7 +97,7 @@ users = [
 ];
 
 function updateStats() {
-	users.forEach(mainfunc);
+	usersById.forEach(mainfunc);
 }
 /*
 function updaat{
@@ -93,5 +154,10 @@ function loadData(usersloaded) {
 			u.totalKarma.toLocaleString() +
 			' karma';
 	});
+	newUserCounterEach++;
+	console.log('Users: ' + newUserCounterEach);
+	if (newUserCounterEach == usersById.length) {
+		console.log('Completed loading');
+	}
 	document.title = 'Reddit karma counter';
 }
