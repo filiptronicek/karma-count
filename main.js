@@ -159,5 +159,5 @@ function loadData(usersloaded) {
 	if (newUserCounterEach == usersById.length) {
 		console.log('Completed loading');
 	}
-	document.title = 'Reddit karma counter';
+	document.title = 'Reddit karma';
 }
