@@ -148,11 +148,9 @@ function loadData(usersloaded) {
 		leaderboard.innerHTML +=
 			"<div class='usr' id='" +
 			u.userName +
-			"'><br><br><img src='" +
+			"'><a href='"+u.userUrl+"'><br><br><img src='" +
 			u.userIcon +
-			"'><br><a href='" +
-			u.userUrl +
-			"'> u/" +
+			"'><br> u/" +
 			u.userName +
 			'</a><br>' +
 			u.totalKarma.toLocaleString() +
