@@ -55,7 +55,7 @@ if (localStorage.getItem('reload') === 'true') {
 
 	var Reload = function() {
 		console.log('Reloading in 5 seconds');
-		leaderboard.innerHTML += '<link rel="icon" href="down.png"></link>';
+		leaderboard.innerHTML += '<link rel="icon" href="img/down.png"></link>';
 
 		setTimeout(function() {
 			document.title = 'Loading';
@@ -165,7 +165,7 @@ function loadData(usersloaded) {
 	}
 	*/
 	document.title = 'Reddit karma';
-	leaderboard.innerHTML += '<link rel="icon" href="favicon.png"></link>';
+	leaderboard.innerHTML += '<link rel="icon" href="img/favicon.png"></link>';
 }
 
 function addNew() {
