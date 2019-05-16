@@ -1,60 +1,71 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Loading</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
-    <script src="jquery-3.3.1.min.js"></script>
-    <link rel="icon" type="image/png" href="down.png">
+    <head>
+        <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" rel="stylesheet">
+        <meta charset="utf-8">
+
+        <meta content="IE=edge" http-equiv="X-UA-Compatible">
+        <title>Loading</title>
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <link href="style.css" media="screen" rel="stylesheet" type="text/css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/favico.js/0.3.10/favico.min.js"></script>
+        <script src="jquery-3.3.1.min.js"></script>
+        <link
+        href="down.png" rel="icon" type="image/png">
     <!--
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    -->
-</head>
+                                                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+                                                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+                                                -->
+    </head>
 
-<div class="settings" id="settings">
-    <!-- The Modal -->
-<div id="myModal" class="modal">
+    <div
+        class="settings" id="settings">
+        <!-- The Modal -->
+        <div
+            class="modal" id="myModal">
 
-        <!-- Modal content -->
-        <div class="modal-content">
+            <!-- Modal content -->
+            <div class="modal-content">
                 <div class="modal-header">
-                        <span class="close">&times;</span>
+                    <span class="close">&times;</span>
 
-                        <h2>Settings</h2>
-                      </div>
-                      <br />
-          <div class="modal-body">
+                    <h2>Settings</h2>
+                </div>
+                <br/>
+                <div class="modal-body">
 
-            <p>Auto refresh: (every minute)
-            <!-- Rounded switch -->
-<label class="switch">
-        <input type="checkbox" id="checkbox">
-        <span class="slider round"></span>
-      </label>
-      </p>
-          </div>
-</div>
-      </div>
-     <i class="fas fa-cog" id="settingsbtn"></i>
+                    <p>Auto refresh (every minute)
 
-</div>
+                        <!-- Rounded switch -->
+                        <label class="switch">
+                            <input id="checkbox" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </p>
+                    <br>
+                    <p>Light theme
 
+                        <label class="switch">
+                            <input class="switch__input" id="themeSwitch" type="checkbox">
+                            <span class="slider round"></span>
+                            <div aria-hidden="true" class="switch__marker"></div>
+                        </label>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <i class="fas fa-cog" id="settingsbtn"></i>
 
-<body>
-<div id="leaderboard">
-  <div id="profiles">
+    </div>
 
-  </div>
+    <body>
+        <div id="leaderboard">
+            <div id="profiles"></div>
 
-
-</div>
-<a href="https://github.com/filiptronicek/Karma-count" >
-  <img src="github.png" alt="Github Logo" class="octocat" id="github" >
-</a>
-    <script src="main.js"> </script>
-</body>
+        </div>
+        <a href="https://github.com/filiptronicek/Karma-count">
+            <img alt="Github Logo" class="octocat" id="github" src="github.png">
+        </a>
+        <script src="main.js"> </script>
+    </body>
 </html>
