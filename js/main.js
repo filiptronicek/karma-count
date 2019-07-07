@@ -23,7 +23,7 @@ usersById = [
 ];
 //Settings modal
 
-$('#checkbox').change(function(ev) {
+$('#checkbox').change(function (ev) {
 	if ($(this).is(':checked')) {
 		if (typeof Storage !== 'undefined') {
 			// Store
@@ -31,8 +31,7 @@ $('#checkbox').change(function(ev) {
 			console.log('Localstorage changed to ' + localStorage.getItem('reload'));
 
 			// Retrieve
-		} else {
-		}
+		} else {}
 	} else {
 		if (typeof Storage !== 'undefined') {
 			// Store
@@ -43,7 +42,7 @@ $('#checkbox').change(function(ev) {
 		}
 	}
 
-	setTimeout(function() {
+	setTimeout(function () {
 		console.log('Shit just got updated');
 		location.href = '';
 	}, 100);
@@ -53,18 +52,18 @@ if (localStorage.getItem('reload') === 'true') {
 
 	$('#checkbox').attr('checked', 'true');
 
-	var Reload = function() {
+	var Reload = function () {
 		console.log('Reloading in 5 seconds');
 		leaderboard.innerHTML += '<link rel="icon" href="img/down.png"></link>';
 
-		setTimeout(function() {
+		setTimeout(function () {
 			document.title = 'Loading';
 		}, 4500);
-		setTimeout(function() {
+		setTimeout(function () {
 			location.reload(true);
 		}, 5000);
 	};
-	setTimeout(function() {
+	setTimeout(function () {
 		Reload();
 	}, 55000);
 } else {
@@ -81,47 +80,48 @@ var btn = settingsbtn;
 var span = document.getElementsByClassName('close')[0];
 
 // When the user clicks the button, open the modal
-btn.onclick = function() {
+btn.onclick = function () {
 	modal.style.display = 'block';
 };
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+span.onclick = function () {
 	modal.style.display = 'none';
 };
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+window.onclick = function (event) {
 	if (event.target == modal) {
 		modal.style.display = 'none';
 	}
 };
+
 function mainfunc(user) {
-	$.getJSON('https://www.reddit.com/user/' + user + '/about.json', function(data) {
-		commentKarma = data.data.comment_karma;
-		postKarma = data.data.link_karma;
-		totalKarma = commentKarma + postKarma;
-		userName = user;
-		userIcon = data.data.icon_img;
-		userUrl = 'https://reddit.com/u/' + userName;
+	$.getJSON('https://www.reddit.com/user/' + user + '/about.json', function (data) {
+			commentKarma = data.data.comment_karma;
+			postKarma = data.data.link_karma;
+			totalKarma = commentKarma + postKarma;
+			userName = user;
+			userIcon = data.data.icon_img;
+			userUrl = 'https://reddit.com/u/' + userName;
 
-		usersloaded.push({
-			user,
-			userName,
-			userIcon,
-			userUrl,
-			totalKarma
-		});
+			usersloaded.push({
+				user,
+				userName,
+				userIcon,
+				userUrl,
+				totalKarma
+			});
 
-		loadData(usersloaded);
-	})
-		.done(function() {
+			loadData(usersloaded);
+		})
+		.done(function () {
 			return;
 		})
-		.fail(function() {
+		.fail(function () {
 			console.log('error loading ' + user);
 		})
-		.always(function() {
+		.always(function () {
 			//console.log('completed loading ' + user);
 		});
 }
@@ -149,7 +149,7 @@ function loadData(usersloaded) {
 			u.userUrl +
 			"'><br><br><img src='" +
 			u.userIcon +
-			"'><br> u/" +
+			"' height='256'><br> u/" +
 			u.userName +
 			'</a><br>' +
 			u.totalKarma.toLocaleString() +
@@ -177,52 +177,52 @@ function addNew() {
 		updateStats();
 	}
 }
-$(document).ready(function() {
+$(document).ready(function () {
 	$('#github').hover(
-		function() {
+		function () {
 			$('#github').addClass('clockwise');
 		},
-		function() {
+		function () {
 			$('#github').removeClass('clockwise');
 		},
-		function() {
+		function () {
 			$('#github').removeClass('counterclockwise');
 		}
 	);
 });
 
-$('#github').hover(function() {
+$('#github').hover(function () {
 	$(this).addClass('counterclockwise');
 });
 var isMobile = {
-	Android: function() {
+	Android: function () {
 		return navigator.userAgent.match(/Android/i);
 	},
-	BlackBerry: function() {
+	BlackBerry: function () {
 		return navigator.userAgent.match(/BlackBerry/i);
 	},
-	iOS: function() {
+	iOS: function () {
 		return navigator.userAgent.match(/iPhone|iPad|iPod/i);
 	},
-	Opera: function() {
+	Opera: function () {
 		return navigator.userAgent.match(/Opera Mini/i);
 	},
-	Windows: function() {
+	Windows: function () {
 		return navigator.userAgent.match(/IEMobile/i);
 	},
-	any: function() {
+	any: function () {
 		return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
 	}
 };
 if (isMobile.any()) {
 	$('#github').hide();
 }
-(function() {
+(function () {
 	// Theme switch
 	var themeSwitch = document.getElementById('themeSwitch');
 	if (themeSwitch) {
 		initTheme(); // if user has already selected a specific theme -> apply it
-		themeSwitch.addEventListener('change', function(event) {
+		themeSwitch.addEventListener('change', function (event) {
 			resetTheme(); // update color theme
 		});
 
@@ -233,8 +233,9 @@ if (isMobile.any()) {
 			themeSwitch.checked = darkThemeSelected;
 			// update body data-theme attribute
 			darkThemeSelected
-				? document.body.setAttribute('data-theme', 'dark')
-				: document.body.removeAttribute('data-theme');
+				?
+				document.body.setAttribute('data-theme', 'dark') :
+				document.body.removeAttribute('data-theme');
 		}
 
 		function resetTheme() {
@@ -255,7 +256,7 @@ if (isMobile.any()) {
 		var trigger = mainHeader.getElementsByClassName('js-main-header__nav-trigger')[0],
 			nav = mainHeader.getElementsByClassName('js-main-header__nav')[0];
 		//detect click on nav trigger
-		trigger.addEventListener('click', function(event) {
+		trigger.addEventListener('click', function (event) {
 			event.preventDefault();
 			var ariaExpanded = !Util.hasClass(nav, 'main-header__nav--is-visible');
 			//show nav and update button aria value
@@ -274,19 +275,19 @@ function Util() {}
 /* 
 	class manipulation functions
 */
-Util.hasClass = function(el, className) {
+Util.hasClass = function (el, className) {
 	if (el.classList) return el.classList.contains(className);
 	else return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'));
 };
 
-Util.addClass = function(el, className) {
+Util.addClass = function (el, className) {
 	var classList = className.split(' ');
 	if (el.classList) el.classList.add(classList[0]);
 	else if (!Util.hasClass(el, classList[0])) el.className += ' ' + classList[0];
 	if (classList.length > 1) Util.addClass(el, classList.slice(1).join(' '));
 };
 
-Util.removeClass = function(el, className) {
+Util.removeClass = function (el, className) {
 	var classList = className.split(' ');
 	if (el.classList) el.classList.remove(classList[0]);
 	else if (Util.hasClass(el, classList[0])) {
@@ -296,12 +297,12 @@ Util.removeClass = function(el, className) {
 	if (classList.length > 1) Util.removeClass(el, classList.slice(1).join(' '));
 };
 
-Util.toggleClass = function(el, className, bool) {
+Util.toggleClass = function (el, className, bool) {
 	if (bool) Util.addClass(el, className);
 	else Util.removeClass(el, className);
 };
 
-Util.setAttributes = function(el, attrs) {
+Util.setAttributes = function (el, attrs) {
 	for (var key in attrs) {
 		el.setAttribute(key, attrs[key]);
 	}
@@ -310,7 +311,7 @@ Util.setAttributes = function(el, attrs) {
 /* 
   DOM manipulation
 */
-Util.getChildrenByClassName = function(el, className) {
+Util.getChildrenByClassName = function (el, className) {
 	var children = el.children,
 		childrenByClass = [];
 	for (var i = 0; i < el.children.length; i++) {
@@ -322,11 +323,11 @@ Util.getChildrenByClassName = function(el, className) {
 /* 
 	Animate height of an element
 */
-Util.setHeight = function(start, to, element, duration, cb) {
+Util.setHeight = function (start, to, element, duration, cb) {
 	var change = to - start,
 		currentTime = null;
 
-	var animateHeight = function(timestamp) {
+	var animateHeight = function (timestamp) {
 		if (!currentTime) currentTime = timestamp;
 		var progress = timestamp - currentTime;
 		var val = parseInt(progress / duration * change + start);
@@ -347,11 +348,11 @@ Util.setHeight = function(start, to, element, duration, cb) {
 	Smooth Scroll
 */
 
-Util.scrollTo = function(final, duration, cb) {
+Util.scrollTo = function (final, duration, cb) {
 	var start = window.scrollY || document.documentElement.scrollTop,
 		currentTime = null;
 
-	var animateScroll = function(timestamp) {
+	var animateScroll = function (timestamp) {
 		if (!currentTime) currentTime = timestamp;
 		var progress = timestamp - currentTime;
 		if (progress > duration) progress = duration;
@@ -372,7 +373,7 @@ Util.scrollTo = function(final, duration, cb) {
 */
 
 //Move focus to an element
-Util.moveFocus = function(element) {
+Util.moveFocus = function (element) {
 	if (!element) element = document.getElementsByTagName('body')[0];
 	element.focus();
 	if (document.activeElement !== element) {
@@ -385,15 +386,15 @@ Util.moveFocus = function(element) {
   Misc
 */
 
-Util.getIndexInArray = function(array, el) {
+Util.getIndexInArray = function (array, el) {
 	return Array.prototype.indexOf.call(array, el);
 };
 
-Util.cssSupports = function(property, value) {
+Util.cssSupports = function (property, value) {
 	if ('CSS' in window) {
 		return CSS.supports(property, value);
 	} else {
-		var jsProperty = property.replace(/-([a-z])/g, function(g) {
+		var jsProperty = property.replace(/-([a-z])/g, function (g) {
 			return g[1].toUpperCase();
 		});
 		return jsProperty in document.body.style;
@@ -409,7 +410,7 @@ if (!Element.prototype.matches) {
 }
 
 if (!Element.prototype.closest) {
-	Element.prototype.closest = function(s) {
+	Element.prototype.closest = function (s) {
 		var el = this;
 		if (!document.documentElement.contains(el)) return null;
 		do {
@@ -423,7 +424,11 @@ if (!Element.prototype.closest) {
 //Custom Event() constructor
 if (typeof window.CustomEvent !== 'function') {
 	function CustomEvent(event, params) {
-		params = params || { bubbles: false, cancelable: false, detail: undefined };
+		params = params || {
+			bubbles: false,
+			cancelable: false,
+			detail: undefined
+		};
 		var evt = document.createEvent('CustomEvent');
 		evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
 		return evt;
@@ -437,7 +442,7 @@ if (typeof window.CustomEvent !== 'function') {
 /* 
 	Animation curves
 */
-Math.easeInOutQuad = function(t, b, c, d) {
+Math.easeInOutQuad = function (t, b, c, d) {
 	t /= d / 2;
 	if (t < 1) return c / 2 * t * t + b;
 	t--;
