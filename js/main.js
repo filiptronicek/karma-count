@@ -19,7 +19,8 @@ usersById = [
 	'gallowboob',
 	'tooshiftyforyou',
 	'haxpress',
-	'blokensie'
+	'blokensie',
+	'ilovegaming123456',
 ];
 //Settings modal
 
