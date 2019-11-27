@@ -1,0 +1,3 @@
+{
+  "routes": [{ "src": "/layout/(?<id>[^/]+)", "dest": "/layout_process.html" }]
+}
