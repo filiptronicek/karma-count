@@ -4,8 +4,6 @@
 	padding: 0;
 }
 body {
-	background: black;
-	color: white;
 	font-family: Roboto;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -130,7 +128,6 @@ input:checked + .slider:before {
 	-webkit-animation-duration: 0.4s;
 	animation-name: animatetop;
 	animation-duration: 0.4s;
-	color: black;
 }
 
 /* Add Animation */
