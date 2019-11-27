@@ -2,7 +2,7 @@ const UrlEncodedCode = window.location.pathname.replace("/layout/", "");
 console.log(UrlEncodedCode);
 
 // Checks
-var filename = fullPath.replace(/^.*[\\\/]/, "");
+var filename = window.location.pathname.replace(/^.*[\\\/]/, "");
 var alphaNumPatt = /^([0-9]|[a-z])+([0-9a-z]+)$/i;
 
 if (UrlEncodedCode.length != 5 && UrlEncodedCode.length > 0) {
