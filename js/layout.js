@@ -2,6 +2,7 @@ const UrlEncodedCode = window.location.pathname.replace("/layout/", "");
 console.log(UrlEncodedCode);
 
 // Checks
+var filename = fullPath.replace(/^.*[\\\/]/, "");
 var alphaNumPatt = /^([0-9]|[a-z])+([0-9a-z]+)$/i;
 
 if (UrlEncodedCode.length != 5 && UrlEncodedCode.length > 0) {
@@ -10,4 +11,7 @@ if (UrlEncodedCode.length != 5 && UrlEncodedCode.length > 0) {
   console.log("No code provided");
 } else if (!UrlEncodedCode.match(alphaNumPatt)) {
   console.log("Code contains invalid characters");
+} else if (filename == "layout_process.html") {
+  location.href = window.location.origin;
+} else {
 }
