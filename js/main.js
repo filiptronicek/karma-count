@@ -156,7 +156,7 @@ function loadData(usersloaded) {
         u.userUrl +
         "'><br><br><img src='" +
         u.userIcon +
-        "' height='256'><br> u/" +
+        "' alt='User icon of u/"+u.userName+"' height='256'><br> u/" +
         u.userName +
         "</a><br>" +
         u.totalKarma.toLocaleString() +
@@ -177,7 +177,7 @@ function addNew() {
     usersById.push(newUsr);
     updateStats();
   }
-}
+}	
 
 $("#github").hover(function() {
   $(this).addClass("counterclockwise");
