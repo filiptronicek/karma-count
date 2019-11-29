@@ -1,4 +1,4 @@
-const UrlEncodedCode = window.location.pathname.replace("/layout/", "");
+const UrlEncodedCode = window.location.pathname.replace("/p/", "");
 console.log(UrlEncodedCode);
 
 function getProfilesFromCode(code) {
