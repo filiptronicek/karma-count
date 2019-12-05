@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script type="text/javascript">
+      var _paq = window._paq || [];
+      _paq.push(["trackPageView"]);
+      _paq.push(["enableLinkTracking"]);
+      (function() {
+        var u = "//nfogix.com/";
+        _paq.push(["setTrackerUrl", u + "api/track"]);
+        _paq.push(["setSiteId", "0500a30b-1b6e-4e10-a973-cf527eb90fa0"]);
+        var d = document,
+          g = d.createElement("script"),
+          s = d.getElementsByTagName("script")[0];
+        g.type = "text/javascript";
+        g.async = true;
+        g.defer = true;
+        g.src = u + "js/nfogix.min.js";
+        s.parentNode.insertBefore(g, s);
+      })();
+    </script>
     <link
       crossorigin="anonymous"
       href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
@@ -25,7 +43,10 @@
     <title>Karma Count</title>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta http-equiv="Cache-Control" content="no-store" />
-    <meta name="Description" content="A karma counter using the Reddit JSON API">
+    <meta
+      name="Description"
+      content="A karma counter using the Reddit JSON API"
+    />
     <link href="img/down.png" rel="icon" type="image/png" />
   </head>
 
