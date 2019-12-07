@@ -1,16 +1,14 @@
 const UrlEncodedCode = window.location.pathname.replace("/p/", "");
 console.log(UrlEncodedCode);
 
-/*
+
 function getProfilesFromCode(code) {
-  $.get(`http://uni.hys.cz/includes/get-api?user=${code}`, function(data) {
+  $.get(`../api/inter?url=${code}`, function(data) {
     alert(data);
   });
 }
-*/
-  $.get(`../api/inter?url=${"faaf"}`, function(data) {
-    alert(data);
-  });
+
+
 // Checks
 var alphaNumPatt = /^([0-9]|[a-z])+([0-9a-z]+)$/i;
 if (UrlEncodedCode == "layout_process.html") {
@@ -24,5 +22,5 @@ if (UrlEncodedCode.length != 5 && UrlEncodedCode.length > 0) {
 } else if (!UrlEncodedCode.match(alphaNumPatt)) {
   console.log("Code contains invalid characters");
 } else {
-  //getProfilesFromCode(UrlEncodedCode);
+  getProfilesFromCode(UrlEncodedCode);
 }
