@@ -8,7 +8,7 @@ function getProfilesFromCode(code) {
   });
 }
 */
-  $.get(`../api/inter${"faaf"}`, function(data) {
+  $.get(`../api/inter?code=${"faaf"}`, function(data) {
     alert(data);
   });
 // Checks
