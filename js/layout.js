@@ -24,5 +24,5 @@ if (UrlEncodedCode.length != 5 && UrlEncodedCode.length > 0) {
 } else if (!UrlEncodedCode.match(alphaNumPatt)) {
   console.log("Code contains invalid characters");
 } else {
-  getProfilesFromCode(UrlEncodedCode);
+  //getProfilesFromCode(UrlEncodedCode);
 }
