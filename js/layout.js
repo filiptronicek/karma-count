@@ -3,7 +3,7 @@ console.log(UrlEncodedCode);
 
 
 function getProfilesFromCode(code) {
-  $.get(`../api/inter?url=${code}`, function(data) {
+  $.get(`../api/inter?code=${code}`, function(data) {
     alert(data);
   });
 }
