@@ -1,0 +1,22 @@
+{
+  "name": "karma-count",
+  "version": "1.0.0",
+  "description": "[![Maintainability](https://api.codeclimate.com/v1/badges/1cc637e57d2c85f1e208/maintainability)](https://codeclimate.com/github/filiptronicek/Karma-count/maintainability)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filiptronicek/Karma-count.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/filiptronicek/Karma-count/issues"
+  },
+  "homepage": "https://github.com/filiptronicek/Karma-count#readme",
+  "dependencies": {
+    "axios": "^0.19.0"
+  }
+}
