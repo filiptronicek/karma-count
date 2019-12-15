@@ -12,6 +12,16 @@ var usersloaded = [];
 var newUserCounterEach = 0;
 var newUsr;
 
+var date = new Date();
+var month = date.getMonth();
+if (month == 11 || month == 0 || month == 1) {
+  var sf = new Snowflakes({
+    count: 80,
+    maxSize: 20,
+    wind: false
+  });
+}
+
 usersById = [
   "sloth_on_meth",
   "filiptronicek",
@@ -156,7 +166,9 @@ function loadData(usersloaded) {
         u.userUrl +
         "'><br><br><img src='" +
         u.userIcon +
-        "' alt='User icon of u/"+u.userName+"' height='256'><br> u/" +
+        "' alt='User icon of u/" +
+        u.userName +
+        "' height='256'><br> u/" +
         u.userName +
         "</a><br>" +
         u.totalKarma.toLocaleString() +
@@ -177,7 +189,7 @@ function addNew() {
     usersById.push(newUsr);
     updateStats();
   }
-}	
+}
 
 $("#github").hover(function() {
   $(this).addClass("counterclockwise");
