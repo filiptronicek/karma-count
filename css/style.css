@@ -25,6 +25,8 @@ body {
 }
 img {
 	border-radius: 10px;
+	box-shadow:  13px 13px 26px #a1a1a1, 
+	-13px -13px 26px #fbfbfb;
 }
 a {
 	text-decoration: none;
