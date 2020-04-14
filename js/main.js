@@ -31,7 +31,8 @@ usersById = [
   "haxpress",
   "blokensie",
   "ilovegaming123456",
-  "Trony55"
+  "Trony55",
+  "vexillologer"
 ];
 //Settings modal
 
