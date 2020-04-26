@@ -1,6 +1,17 @@
+/*
+
+  DOM
+
+*/
 const leaderboard = document.getElementById("profiles");
 const settingsbtn = document.getElementById("settingsbtn");
 const plusbtn = document.getElementById("new");
+
+// Get the modal
+const modal = document.getElementById("myModal");
+
+// Get the <span> element that closes the modal
+const span = document.getElementsByClassName("close")[0];
 
 let commentKarma;
 let postKarma;
@@ -34,8 +45,12 @@ usersById = [
   "Trony55",
   "vexillologer"
 ];
-//Settings modal
 
+/*
+
+  Settings modal
+
+*/
 $("#checkbox").change(function(ev) {
   if ($(this).is(":checked")) {
     if (typeof Storage !== "undefined") {
@@ -79,14 +94,11 @@ if (localStorage.getItem("reload") === "true") {
   console.log("Auto-reload enabled: " + localStorage.getItem("reload"));
 }
 
-// Get the modal
-var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
 var btn = settingsbtn;
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+
 
 // When the user clicks the button, open the modal
 btn.onclick = function() {
