@@ -48,8 +48,6 @@ $("#checkbox").change(function(ev) {
       // Store
       localStorage.setItem("reload", false);
       console.log("Auto-reload changed to " + localStorage.getItem("reload"));
-
-      // Retrieve
     }
   }
 
