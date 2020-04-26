@@ -1,21 +1,21 @@
-var leaderboard = document.getElementById("profiles");
-var settingsbtn = document.getElementById("settingsbtn");
-var plusbtn = document.getElementById("new");
+const leaderboard = document.getElementById("profiles");
+const settingsbtn = document.getElementById("settingsbtn");
+const plusbtn = document.getElementById("new");
 
-var commentKarma;
-var postKarma;
-var userName;
-var userIcon;
-var userUrl;
-var usersById;
-var usersloaded = [];
-var newUserCounterEach = 0;
-var newUsr;
+let commentKarma;
+let postKarma;
+let userName;
+let userIcon;
+let userUrl;
+let usersById;
+let usersloaded = [];
+let newUserCounterEach = 0;
+let newUsr;
 
-var date = new Date();
-var month = date.getMonth();
+const date = new Date();
+const month = date.getMonth();
 if (month == 11 || month == 0 || month == 1) {
-  var sf = new Snowflakes({
+  const sf = new Snowflakes({
     count: 80,
     maxSize: 20,
     wind: false
@@ -42,9 +42,6 @@ $("#checkbox").change(function(ev) {
       // Store
       localStorage.setItem("reload", true);
       console.log("Auto-reload changed to " + localStorage.getItem("reload"));
-
-      // Retrieve
-    } else {
     }
   } else {
     if (typeof Storage !== "undefined") {
