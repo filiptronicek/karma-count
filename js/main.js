@@ -75,9 +75,9 @@ $("#checkbox").change((_ev) => {
   console.log(`Auto-reload changed to ${localStorage.getItem("reload")}`);
 
 
-  setTimeout(function () {
-    location.href = "";
-  }, 100);
+  setTimeout(() => {
+      location.href = "";
+    }, 100);
 });
 
 if (localStorage.getItem("reload") === "true") {
