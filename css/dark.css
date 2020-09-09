@@ -2,10 +2,12 @@ body {
     background: #0f0e17;
 	color: #fffffe;
 }
+
 .modal-content {
     background: #0f0e17;
 	color: #fffffe;
 }
+
 img {
 	border-radius: 10px;
     box-shadow: 13px 13px 26px #232323,
