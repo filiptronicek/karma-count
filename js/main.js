@@ -63,24 +63,19 @@ $("#checkbox").change((_ev) => {
   if ($(this).is(":checked")) {
     if (typeof Storage !== "undefined") {
       // Store
-
       localStorage.setItem("reload", true);
-
-      console.log("Auto-reload changed to " + localStorage.getItem("reload"));
     }
   } else {
     if (typeof Storage !== "undefined") {
       // Store
 
       localStorage.setItem("reload", false);
-
-      console.log("Auto-reload changed to " + localStorage.getItem("reload"));
     }
   }
+  console.log(`Auto-reload changed to ${localStorage.getItem("reload")}`);
+
 
   setTimeout(function () {
-    console.log("Shit just got updated");
-
     location.href = "";
   }, 100);
 });
