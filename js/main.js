@@ -130,27 +130,25 @@ window.onclick = (event) => {
 };
 
 function mainfunc(user) {
-  $.getJSON(`https://www.reddit.com/user/${user}/about.json`, function (
-    data
-  ) {
-    commentKarma = data.data.comment_karma;
-    postKarma = data.data.link_karma;
+  $.getJSON(`https://www.reddit.com/user/${user}/about.json`, (data) => {
+      commentKarma = data.data.comment_karma;
+      postKarma = data.data.link_karma;
 
-    totalKarma = commentKarma + postKarma;
-    userName = user;
-    userIcon = data.data.icon_img;
-    userUrl = "https://reddit.com/u/" + userName;
+      totalKarma = commentKarma + postKarma;
+      userName = user;
+      userIcon = data.data.icon_img;
+      userUrl = "https://reddit.com/u/" + userName;
 
-    usersloaded.push({
-      user,
-      userName,
-      userIcon,
-      userUrl,
-      totalKarma,
-    });
+      usersloaded.push({
+        user,
+        userName,
+        userIcon,
+        userUrl,
+        totalKarma,
+      });
 
-    loadData(usersloaded);
-  })
+      loadData(usersloaded);
+    })
     .done(function () {
       return;
     })
