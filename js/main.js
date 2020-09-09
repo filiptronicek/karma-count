@@ -122,7 +122,7 @@ function mainfunc(user) {
     totalKarma = commentKarma + postKarma;
     userName = user;
     userIcon = data.data.icon_img;
-    userUrl = "https://reddit.com/u/" + userName;
+    userUrl = `https://reddit.com/u/${userName}`;
 
     usersloaded.push({
       user,
@@ -167,7 +167,7 @@ function loadData(usersloaded) {
       }</a><br> ${u.totalKarma.toLocaleString()} karma`;
     });
   newUserCounterEach++;
-  console.log("Users: " + newUserCounterEach);
+  console.log(`Users: ${newUserCounterEach}`);
 
   document.title = "Reddit karma";
   leaderboard.innerHTML += '<link rel="icon" href="img/favicon.png"></link>';
