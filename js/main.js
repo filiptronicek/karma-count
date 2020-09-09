@@ -241,35 +241,28 @@ $("#github").hover(function() {
   $(this).addClass("counterclockwise");
 });
 var isMobile = {
-  Android: function() {
+  Android: () =>
     // @ts-ignore
-    return navigator.userAgent.match(/Android/i);
-  },
-  BlackBerry: function() {
+    navigator.userAgent.match(/Android/i),
+  BlackBerry: () =>
     // @ts-ignore
-    return navigator.userAgent.match(/BlackBerry/i);
-  },
-  iOS: function() {
+    navigator.userAgent.match(/BlackBerry/i),
+  iOS: () =>
     // @ts-ignore
-    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-  },
-  Opera: function() {
+    navigator.userAgent.match(/iPhone|iPad|iPod/i),
+  Opera: () =>
     // @ts-ignore
-    return navigator.userAgent.match(/Opera Mini/i);
-  },
-  Windows: function() {
+    navigator.userAgent.match(/Opera Mini/i),
+  Windows: () =>
     // @ts-ignore
-    return navigator.userAgent.match(/IEMobile/i);
-  },
-  any: function() {
-    return (
-      isMobile.Android() ||
-      isMobile.BlackBerry() ||
-      isMobile.iOS() ||
-      isMobile.Opera() ||
-      isMobile.Windows()
-    );
-  }
+    navigator.userAgent.match(/IEMobile/i),
+  any: () => (
+    isMobile.Android() ||
+    isMobile.BlackBerry() ||
+    isMobile.iOS() ||
+    isMobile.Opera() ||
+    isMobile.Windows()
+  )
 };
 if (isMobile.any()) {
   // @ts-ignore
