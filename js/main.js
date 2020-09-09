@@ -229,7 +229,7 @@ function addNew() {
   // @ts-ignore
   newUsr = prompt("What is it?");
   console.log(newUsr);
-  if (newUsr != undefined || newUsr != "") {
+  if (newUsr !== undefined || newUsr !== "") {
     usersById.push(newUsr);
     updateStats();
   }
