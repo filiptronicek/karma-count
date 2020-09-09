@@ -90,7 +90,7 @@ if (localStorage.getItem("reload") === "true") {
 
   $("#checkbox").attr("checked", "true");
 
-  var Reload = function () {
+  const Reload = function () {
     console.log("Reloading in 5 seconds");
     leaderboard.innerHTML += '<link rel="icon" href="img/down.png"></link>';
 
