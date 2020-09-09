@@ -10,7 +10,8 @@ function getProfilesFromCode(code) {
 
 
 // Checks
-var alphaNumPatt = /^([0-9]|[a-z])+([0-9a-z]+)$/i;
+const alphaNumPatt = /^([0-9]|[a-z])+([0-9a-z]+)$/i;
+
 if (UrlEncodedCode == "layout_process.html") {
   location.href = window.location.origin;
 }
