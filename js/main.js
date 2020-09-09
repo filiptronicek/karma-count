@@ -167,7 +167,6 @@ function loadData(usersloaded) {
       }</a><br> ${u.totalKarma.toLocaleString()} karma`;
     });
   newUserCounterEach++;
-  console.log(`Users: ${newUserCounterEach}`);
 
   document.title = "Reddit karma";
   leaderboard.innerHTML += '<link rel="icon" href="img/favicon.png"></link>';
