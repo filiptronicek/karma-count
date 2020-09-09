@@ -68,7 +68,6 @@ $("#checkbox").change((_ev) => {
   } else {
     if (typeof Storage !== "undefined") {
       // Store
-
       localStorage.setItem("reload", false);
     }
   }
