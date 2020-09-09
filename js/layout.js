@@ -2,9 +2,7 @@ const UrlEncodedCode = window.location.pathname.replace("/p/", "");
 console.log(UrlEncodedCode);
 
 function getProfilesFromCode(code) {
-  $.get(`../api/inter?code=${code}`, function (data) {
-    alert(data);
-  });
+  $.get(`../api/inter?code=${code}`, function(data) { alert(data); });
 }
 
 // Checks
