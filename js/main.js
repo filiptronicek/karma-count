@@ -90,20 +90,20 @@ if (localStorage.getItem("reload") === "true") {
 
   $("#checkbox").attr("checked", "true");
 
-  const Reload = function () {
+  const Reload = () => {
     console.log("Reloading in 5 seconds");
     leaderboard.innerHTML += '<link rel="icon" href="img/down.png"></link>';
 
-    setTimeout(function () {
-      document.title = "Loading";
-    }, 4500);
-    setTimeout(function () {
-      location.reload(true);
-    }, 5000);
+    setTimeout(() => {
+        document.title = "Loading";
+      }, 4500);
+    setTimeout(() => {
+        location.reload(true);
+      }, 5000);
   };
-  setTimeout(function () {
-    Reload();
-  }, 55000);
+  setTimeout(() => {
+      Reload();
+    }, 55000);
 } else {
   console.log("Auto-reload enabled: " + localStorage.getItem("reload"));
 }
