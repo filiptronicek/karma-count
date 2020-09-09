@@ -159,6 +159,7 @@ function mainfunc(user) {
       //console.log('completed loading ' + user);
     });
 }
+
 //Karma API
 
 function updateStats() {
@@ -200,6 +201,7 @@ function addNew() {
 $("#github").hover(() => {
   $(this).addClass("counterclockwise");
 });
+
 const isMobile = {
   Android: () => navigator.userAgent.match(/Android/i),
   BlackBerry: () => navigator.userAgent.match(/BlackBerry/i),
@@ -213,6 +215,7 @@ const isMobile = {
     isMobile.Opera() ||
     isMobile.Windows(),
 };
+
 if (isMobile.any()) {
   $("#github").hide();
 }
