@@ -1,225 +1,238 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
 * {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
+
 body {
-	font-family: Roboto;
-	font-weight: bold;
-	text-transform: uppercase;
-	font-size: 2vh;
+  font-family: Roboto;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 2vh;
 }
+
 .usr {
-	width: 150px;
-	height: 35px;
-	padding: 4.5em;
-	padding-bottom: 250px;
+  width: 150px;
+  height: 35px;
+  padding: 4.5em;
+  padding-bottom: 250px;
 }
+
 #leaderboard > div {
-	width: 95%;
-	height: 35px;
-	padding: 0.5em;
+  width: 95%;
+  height: 35px;
+  padding: 0.5em;
 }
+
 #leaderboard > div > div {
-	float: left;
+  float: left;
 }
+
 img {
-	border-radius: 10px;
-	box-shadow:  13px 13px 26px #a1a1a1,
-	-13px -13px 26px #fbfbfb;
+  border-radius: 10px;
+  box-shadow: 13px 13px 26px #a1a1a1, -13px -13px 26px #fbfbfb;
 }
+
 a {
-	text-decoration: none;
-	color: #ff4500;
+  text-decoration: none;
+  color: #ff4500;
 }
 /* The switch - the box around the slider */
 .switch {
-	position: relative;
-	display: inline-block;
-	width: 60px;
-	height: 34px;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
 }
 
 /* Hide default HTML checkbox */
 .switch input {
-	opacity: 0;
-	width: 0;
-	height: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 /* The slider */
 .slider {
-	position: absolute;
-	cursor: pointer;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: #ccc;
-	-webkit-transition: .4s;
-	transition: .4s;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
-	position: absolute;
-	content: "";
-	height: 26px;
-	width: 26px;
-	left: 4px;
-	bottom: 4px;
-	background-color: white;
-	-webkit-transition: .4s;
-	transition: .4s;
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
-	background-color: #ff4500;
+  background-color: #ff4500;
 }
 
 input:focus + .slider {
-	box-shadow: 0 0 1px #ff4500;
+  box-shadow: 0 0 1px #ff4500;
 }
 
 input:checked + .slider:before {
-	-webkit-transform: translateX(26px);
-	-ms-transform: translateX(26px);
-	transform: translateX(26px);
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
 }
 
 /* Rounded sliders */
 .slider.round {
-	border-radius: 34px;
+  border-radius: 34px;
 }
 
 .slider.round:before {
-	border-radius: 50%;
+  border-radius: 50%;
 }
+
 #settingsbtn {
-	position: absolute;
-	right: 1%;
-	top: 1%;
-	font-size: 35px;
-	cursor: pointer;
+  position: absolute;
+  right: 1%;
+  top: 1%;
+  font-size: 35px;
+  cursor: pointer;
 }
 
 /* The Modal (background) */
 .modal {
-	display: none; /* Hidden by default */
-	position: fixed; /* Stay in place */
-	z-index: 1; /* Sit on top */
-	padding-top: 100px; /* Location of the box */
-	left: 0;
-	top: 0;
-	width: 100%; /* Full width */
-	height: 100%; /* Full height */
-	overflow: auto; /* Enable scroll if needed */
-	background-color: rgb(255, 255, 255); /* Fallback color */
-	background-color: rgba(255, 255, 255, 0.4); /* Black w/ opacity */
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(255, 255, 255); /* Fallback color */
+  background-color: rgba(255, 255, 255, 0.4); /* Black w/ opacity */
 }
 
 /* Modal Content */
 .modal-content {
-	position: relative;
-	background-color: #fefefe;
-	margin: auto;
-	padding: 0;
-	border: 1px solid #888;
-	width: 80%;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	-webkit-animation-name: animatetop;
-	-webkit-animation-duration: 0.4s;
-	animation-name: animatetop;
-	animation-duration: 0.4s;
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
 }
 
 /* Add Animation */
 @-webkit-keyframes animatetop {
-	from {
-		top: -300px;
-		opacity: 0;
-	}
-	to {
-		top: 0;
-		opacity: 1;
-	}
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
 
 @keyframes animatetop {
-	from {
-		top: -300px;
-		opacity: 0;
-	}
-	to {
-		top: 0;
-		opacity: 1;
-	}
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
 
 /* The Close Button */
 .close {
-	color: white;
-	float: right;
-	font-size: 28px;
-	font-weight: bold;
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-	color: #000;
-	text-decoration: none;
-	cursor: pointer;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .modal-body {
-	padding: 2px 16px;
+  padding: 2px 16px;
 }
+
 .modal-header {
-	padding: 2px 16px;
-	background-color: #ff4500;
-	color: white;
+  padding: 2px 16px;
+  background-color: #ff4500;
+  color: white;
 }
+
 .fas {
-	-webkit-transition: -webkit-transform .8s ease-in-out;
-	transition: transform .4s ease-in-out;
+  -webkit-transition: -webkit-transform 0.8s ease-in-out;
+  transition: transform 0.4s ease-in-out;
 }
+
 .fas:hover {
-	-webkit-transform: rotate(180deg);
-	transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
+
 #new {
-	text-align: center;
+  text-align: center;
 }
+
 .usr > svg {
-	fill: white;
-	width: 180px;
-	position: relative;
-	left: 35%;
-	top: 50%;
-	cursor: pointer;
+  fill: white;
+  width: 180px;
+  position: relative;
+  left: 35%;
+  top: 50%;
+  cursor: pointer;
 }
 
 .github-corner:hover .octo-arm {
-	animation: octocat-wave 560ms ease-in-out;
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
   }
-  @keyframes octocat-wave {
-	0%,
-	100% {
-	  transform: rotate(0);
-	}
-	20%,
-	60% {
-	  transform: rotate(-25deg);
-	}
-	40%,
-	80% {
-	  transform: rotate(10deg);
-	}
+  20%,
+  60% {
+    transform: rotate(-25deg);
   }
-  @media (max-width: 500px) {
-	.github-corner:hover .octo-arm {
-	  animation: none;
-	}
-	.github-corner .octo-arm {
-	  animation: octocat-wave 560ms ease-in-out;
-	}
+  40%,
+  80% {
+    transform: rotate(10deg);
   }
+}
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}
