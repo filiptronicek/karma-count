@@ -109,7 +109,7 @@ if (localStorage.getItem("reload") === "true") {
 }
 
 // Get the button that opens the modal
-var btn = settingsbtn;
+const btn = settingsbtn;
 
 // When the user clicks the button, open the modal
 btn.onclick = function () {
