@@ -59,7 +59,7 @@ usersById = [
 
 */
 
-$("#checkbox").change(function (ev) {
+$("#checkbox").change((_ev) => {
   if ($(this).is(":checked")) {
     if (typeof Storage !== "undefined") {
       // Store
