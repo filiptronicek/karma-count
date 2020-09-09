@@ -197,7 +197,7 @@ function addNew() {
   }
 }
 
-$("#github").hover(function () {
+$("#github").hover(() => {
   $(this).addClass("counterclockwise");
 });
 const isMobile = {
