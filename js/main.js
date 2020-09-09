@@ -169,9 +169,6 @@ function updateStats() {
 
 updateStats();
 
-/**
- * @param {any[]} usersloaded
- */
 function loadData(usersloaded) {
   leaderboard.innerHTML = "";
   usersloaded
