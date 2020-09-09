@@ -105,7 +105,7 @@ if (localStorage.getItem("reload") === "true") {
       Reload();
     }, 55000);
 } else {
-  console.log("Auto-reload enabled: " + localStorage.getItem("reload"));
+  console.log(`Auto-reload enabled: ${localStorage.getItem("reload")}`);
 }
 
 // Get the button that opens the modal
