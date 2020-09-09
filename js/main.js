@@ -130,7 +130,7 @@ window.onclick = (event) => {
 };
 
 function mainfunc(user) {
-  $.getJSON("https://www.reddit.com/user/" + user + "/about.json", function (
+  $.getJSON(`https://www.reddit.com/user/${user}/about.json`, function (
     data
   ) {
     commentKarma = data.data.comment_karma;
