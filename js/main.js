@@ -60,16 +60,16 @@ usersById = [
 */
 
 $("#checkbox").change((_ev) => {
-    if (typeof Storage !== "undefined") {
-      // Store
-      localStorage.setItem("reload", $("#checkbox").is(":checked"));
-    }
+  if (typeof Storage !== "undefined") {
+    // Store
+    localStorage.setItem("reload", $("#checkbox").is(":checked"));
+  }
 
   console.log(`Auto-reload changed to ${localStorage.getItem("reload")}`);
 
   setTimeout(() => {
-      location.href = "";
-    }, 50);
+    location.href = "";
+  }, 50);
 });
 
 if (localStorage.getItem("reload") === "true") {
