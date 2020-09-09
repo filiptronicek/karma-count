@@ -73,10 +73,9 @@ $("#checkbox").change((_ev) => {
   }
   console.log(`Auto-reload changed to ${localStorage.getItem("reload")}`);
 
-
   setTimeout(() => {
-      location.href = "";
-    }, 100);
+    location.href = "";
+  }, 100);
 });
 
 if (localStorage.getItem("reload") === "true") {
