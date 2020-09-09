@@ -153,7 +153,7 @@ function mainfunc(user) {
       return;
     })
     .fail(function () {
-      console.log("error loading " + user);
+      console.log(`error loading ${user}`);
     })
     .always(function () {
       //console.log('completed loading ' + user);
