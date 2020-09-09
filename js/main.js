@@ -240,7 +240,7 @@ $("#github").hover(function() {
   // @ts-ignore
   $(this).addClass("counterclockwise");
 });
-var isMobile = {
+const isMobile = {
   Android: () =>
     // @ts-ignore
     navigator.userAgent.match(/Android/i),
