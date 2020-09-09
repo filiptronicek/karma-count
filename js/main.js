@@ -34,9 +34,9 @@ const date = new Date();
 const month = date.getMonth();
 if (month === 11 || month === 0 || month === 1) {
   const sf = new Snowflakes({
-    count : 80,
-    maxSize : 20,
-    wind : false,
+    count: 80,
+    maxSize: 20,
+    wind: false,
   });
 }
 
@@ -73,7 +73,9 @@ $("#checkbox").change((_ev) => {
   }
   console.log(`Auto-reload changed to ${localStorage.getItem("reload")}`);
 
-  setTimeout(() => { location.href = ""; }, 100);
+  setTimeout(() => {
+    location.href = "";
+  }, 100);
 });
 
 if (localStorage.getItem("reload") === "true") {
@@ -83,10 +85,16 @@ if (localStorage.getItem("reload") === "true") {
     console.log("Reloading in 5 seconds");
     leaderboard.innerHTML += '<link rel="icon" href="img/down.png"></link>';
 
-    setTimeout(() => { document.title = "Loading"; }, 4500);
-    setTimeout(() => { location.reload(true); }, 5000);
+    setTimeout(() => {
+      document.title = "Loading";
+    }, 4500);
+    setTimeout(() => {
+      location.reload(true);
+    }, 5000);
   };
-  setTimeout(() => { Reload(); }, 55000);
+  setTimeout(() => {
+    Reload();
+  }, 55000);
 } else {
   console.log(`Auto-reload enabled: ${localStorage.getItem("reload")}`);
 }
@@ -95,10 +103,14 @@ if (localStorage.getItem("reload") === "true") {
 const btn = settingsbtn;
 
 // When the user clicks the button, open the modal
-btn.onclick = () => { modal.style.display = "block"; };
+btn.onclick = () => {
+  modal.style.display = "block";
+};
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = () => { modal.style.display = "none"; };
+span.onclick = () => {
+  modal.style.display = "none";
+};
 
 // When the user clicks anywhere outside of the modal, close it
 
@@ -109,47 +121,57 @@ window.onclick = (event) => {
 };
 
 function mainfunc(user) {
-  $.getJSON(`https://www.reddit.com/user/${user}/about.json`,
-            (data) => {
-              commentKarma = data.data.comment_karma;
-              postKarma = data.data.link_karma;
+  $.getJSON(`https://www.reddit.com/user/${user}/about.json`, (data) => {
+    commentKarma = data.data.comment_karma;
+    postKarma = data.data.link_karma;
 
-              totalKarma = commentKarma + postKarma;
-              userName = user;
-              userIcon = data.data.icon_img;
-              userUrl = "https://reddit.com/u/" + userName;
+    totalKarma = commentKarma + postKarma;
+    userName = user;
+    userIcon = data.data.icon_img;
+    userUrl = "https://reddit.com/u/" + userName;
 
-              usersloaded.push({
-                user,
-                userName,
-                userIcon,
-                userUrl,
-                totalKarma,
-              });
+    usersloaded.push({
+      user,
+      userName,
+      userIcon,
+      userUrl,
+      totalKarma,
+    });
 
-              loadData(usersloaded);
-            })
-      .done(function() { return; })
-      .fail(function() { console.log(`error loading ${user}`); })
-      .always(function() {
-        // console.log('completed loading ' + user);
-      });
+    loadData(usersloaded);
+  })
+    .done(function () {
+      return;
+    })
+    .fail(function () {
+      console.log(`error loading ${user}`);
+    })
+    .always(function () {
+      // console.log('completed loading ' + user);
+    });
 }
 
 // Karma API
 
-function updateStats() { usersById.forEach(mainfunc); }
+function updateStats() {
+  usersById.forEach(mainfunc);
+}
 
 updateStats();
 
 function loadData(usersloaded) {
   leaderboard.innerHTML = "";
-  usersloaded.sort((a, b) => b.totalKarma - a.totalKarma).forEach((u) => {
-    leaderboard.innerHTML += `<div class='usr' id='${u.userName}'><a href='${
-        u.userUrl}'><br><br><img src='${u.userIcon}' alt='User icon of u/${
-        u.userName}' height='256'><br> u/${u.userName}</a><br> ${
-        u.totalKarma.toLocaleString()} karma`;
-  });
+  usersloaded
+    .sort((a, b) => b.totalKarma - a.totalKarma)
+    .forEach((u) => {
+      leaderboard.innerHTML += `<div class='usr' id='${u.userName}'><a href='${
+        u.userUrl
+      }'><br><br><img src='${u.userIcon}' alt='User icon of u/${
+        u.userName
+      }' height='256'><br> u/${
+        u.userName
+      }</a><br> ${u.totalKarma.toLocaleString()} karma`;
+    });
   newUserCounterEach++;
   console.log("Users: " + newUserCounterEach);
 
@@ -167,16 +189,22 @@ function addNew() {
   }
 }
 
-$("#github").hover(() => { $(this).addClass("counterclockwise"); });
+$("#github").hover(() => {
+  $(this).addClass("counterclockwise");
+});
 
 const isMobile = {
-  Android : () => navigator.userAgent.match(/Android/i),
-  BlackBerry : () => navigator.userAgent.match(/BlackBerry/i),
-  iOS : () => navigator.userAgent.match(/iPhone|iPad|iPod/i),
-  Opera : () => navigator.userAgent.match(/Opera Mini/i),
-  Windows : () => navigator.userAgent.match(/IEMobile/i),
-  any : () => isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() ||
-              isMobile.Opera() || isMobile.Windows(),
+  Android: () => navigator.userAgent.match(/Android/i),
+  BlackBerry: () => navigator.userAgent.match(/BlackBerry/i),
+  iOS: () => navigator.userAgent.match(/iPhone|iPad|iPod/i),
+  Opera: () => navigator.userAgent.match(/Opera Mini/i),
+  Windows: () => navigator.userAgent.match(/IEMobile/i),
+  any: () =>
+    isMobile.Android() ||
+    isMobile.BlackBerry() ||
+    isMobile.iOS() ||
+    isMobile.Opera() ||
+    isMobile.Windows(),
 };
 
 if (isMobile.any()) {
