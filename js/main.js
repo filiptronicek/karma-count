@@ -166,13 +166,7 @@ function mainfunc(user) {
 function updateStats() {
   usersById.forEach(mainfunc);
 }
-/*
-function updaat{
-	document.body.innerHTML = '';
-	users.forEach(mainfunc);
-	setTimeout(updaat, 10000);
-}
-*/
+
 updateStats();
 
 /**
