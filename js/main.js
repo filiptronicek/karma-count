@@ -81,8 +81,6 @@ $("#checkbox").change((_ev) => {
 });
 
 if (localStorage.getItem("reload") === "true") {
-  console.log("Auto-reload enabled: " + localStorage.getItem("reload"));
-
   $("#checkbox").attr("checked", "true");
 
   const Reload = () => {
