@@ -177,20 +177,13 @@ function loadData(usersloaded) {
   usersloaded
     .sort((a, b) => b.totalKarma - a.totalKarma)
     .forEach((u) => {
-      leaderboard.innerHTML +=
-        "<div class='usr' id='" +
-        u.userName +
-        "'><a href='" +
-        u.userUrl +
-        "'><br><br><img src='" +
-        u.userIcon +
-        "' alt='User icon of u/" +
-        u.userName +
-        "' height='256'><br> u/" +
-        u.userName +
-        "</a><br>" +
-        u.totalKarma.toLocaleString() +
-        " karma";
+      leaderboard.innerHTML += `<div class='usr' id='${u.userName}'><a href='${
+        u.userUrl
+      }'><br><br><img src='${u.userIcon}' alt='User icon of u/${
+        u.userName
+      }' height='256'><br> u/${
+        u.userName
+      }</a><br> ${u.totalKarma.toLocaleString()} karma`;
     });
   newUserCounterEach++;
   console.log("Users: " + newUserCounterEach);
