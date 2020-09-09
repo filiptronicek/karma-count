@@ -95,15 +95,15 @@ if (localStorage.getItem("reload") === "true") {
     leaderboard.innerHTML += '<link rel="icon" href="img/down.png"></link>';
 
     setTimeout(() => {
-        document.title = "Loading";
-      }, 4500);
+      document.title = "Loading";
+    }, 4500);
     setTimeout(() => {
-        location.reload(true);
-      }, 5000);
+      location.reload(true);
+    }, 5000);
   };
   setTimeout(() => {
-      Reload();
-    }, 55000);
+    Reload();
+  }, 55000);
 } else {
   console.log(`Auto-reload enabled: ${localStorage.getItem("reload")}`);
 }
@@ -131,24 +131,24 @@ window.onclick = (event) => {
 
 function mainfunc(user) {
   $.getJSON(`https://www.reddit.com/user/${user}/about.json`, (data) => {
-      commentKarma = data.data.comment_karma;
-      postKarma = data.data.link_karma;
+    commentKarma = data.data.comment_karma;
+    postKarma = data.data.link_karma;
 
-      totalKarma = commentKarma + postKarma;
-      userName = user;
-      userIcon = data.data.icon_img;
-      userUrl = "https://reddit.com/u/" + userName;
+    totalKarma = commentKarma + postKarma;
+    userName = user;
+    userIcon = data.data.icon_img;
+    userUrl = "https://reddit.com/u/" + userName;
 
-      usersloaded.push({
-        user,
-        userName,
-        userIcon,
-        userUrl,
-        totalKarma,
-      });
+    usersloaded.push({
+      user,
+      userName,
+      userIcon,
+      userUrl,
+      totalKarma,
+    });
 
-      loadData(usersloaded);
-    })
+    loadData(usersloaded);
+  })
     .done(function () {
       return;
     })
@@ -156,11 +156,11 @@ function mainfunc(user) {
       console.log(`error loading ${user}`);
     })
     .always(function () {
-      //console.log('completed loading ' + user);
+      // console.log('completed loading ' + user);
     });
 }
 
-//Karma API
+// Karma API
 
 function updateStats() {
   usersById.forEach(mainfunc);
