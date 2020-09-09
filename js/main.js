@@ -112,12 +112,12 @@ if (localStorage.getItem("reload") === "true") {
 const btn = settingsbtn;
 
 // When the user clicks the button, open the modal
-btn.onclick = function () {
+btn.onclick = () => {
   modal.style.display = "block";
 };
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function () {
+span.onclick = () => {
   modal.style.display = "none";
 };
 
