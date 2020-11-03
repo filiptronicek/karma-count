@@ -116,10 +116,8 @@ window.onclick = (event) => {
 
 function mainfunc(user) {
   $.getJSON(`https://www.reddit.com/user/${user}/about.json`, (data) => {
-    commentKarma = data.data.comment_karma;
-    postKarma = data.data.link_karma;
 
-    totalKarma = commentKarma + postKarma;
+    totalKarma = data.data.total_karma;
     userName = user;
     userIcon = data.data.icon_img;
     userUrl = `https://reddit.com/u/${userName}`;
